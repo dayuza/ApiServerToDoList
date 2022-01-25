@@ -4,7 +4,7 @@ include "../config/koneksi.php";
 
 $data = [];
 
-$query = mysqli_query($conn, "SELECT * FROM `barang` ORDER BY id DESC");
+$query = mysqli_query($conn, "SELECT * FROM `daily` ORDER BY id DESC");
 if($query){
     $status = true;
     $pesan = "reaquest success";

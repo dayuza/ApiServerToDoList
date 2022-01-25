@@ -2,16 +2,19 @@
 
 include "../config/koneksi.php";
 
-$id = @$_POST['id'];
+$User = @$_POST['username'];
+$Pass = md5(@$_POST['password']);
 
 $data = [];
-
-$query = mysqli_query($conn, "DELETE FROM `daily` WHERE `id`='".$id."'");
+$query = mysqli_query($conn, "INSERT INTO `admin` (`username`, `password`) VALUES ('".$User."', '".$Pass."')" );
 
 if($query){
     $status = true;
     $pesan = "request success";
-    $data[] = $query;
+    $data[] = [
+        "username" => $User,
+        "password" => $Pass
+    ];
 } else {
     $status = false;
     $pesan = "request failed";

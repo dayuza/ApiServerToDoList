@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2021 at 03:22 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- Generation Time: Jan 25, 2022 at 01:38 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dabar`
+-- Database: `todolist`
 --
 
 -- --------------------------------------------------------
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `username` varchar(256) NOT NULL,
-  `password` varchar(256) NOT NULL
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -37,40 +37,32 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`username`, `password`) VALUES
-('teguh', 'e10adc3949ba59abbe56e057f20f883e');
+('teguh', '827ccb0eea8a706c4c34a16891f84e7b');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang`
+-- Table structure for table `daily`
 --
 
-CREATE TABLE `barang` (
+CREATE TABLE `daily` (
   `id` int(11) NOT NULL,
-  `nama_barang` varchar(245) NOT NULL,
-  `jumlah_barang` int(11) NOT NULL
+  `waktu` varchar(10) NOT NULL,
+  `tanggal` varchar(200) NOT NULL,
+  `kegiatan` varchar(200) NOT NULL,
+  `prioritas` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `barang`
+-- Dumping data for table `daily`
 --
 
-INSERT INTO `barang` (`id`, `nama_barang`, `jumlah_barang`) VALUES
-(1, 'HP 250', 200),
-(2, 'ASUS M154', 24),
-(3, 'ACER 234', 156),
-(4, 'Samsung A19', 122),
-(5, 'MacBook Pro', 126),
-(7, '', 0),
-(8, '', 0),
-(9, '', 0),
-(10, '', 0),
-(11, '', 0),
-(12, '', 0),
-(13, '', 0),
-(14, '', 0),
-(15, '', 0),
-(16, '', 0);
+INSERT INTO `daily` (`id`, `waktu`, `tanggal`, `kegiatan`, `prioritas`) VALUES
+(15, 'Pagi', 'Tue Nov 16 08:34:04 ICT 2021', 'Ke labor', '1'),
+(16, 'Siang', 'Tue Nov 16 08:34:21 ICT 2021', 'Presentasi', '2'),
+(17, 'Malam', 'Tue Nov 16 08:34:40 ICT 2021', 'Bucin', '3'),
+(18, 'Malam', 'Tue Nov 16 08:54:15 ICT 2021', 'tidur', '1'),
+(19, 'Siang', 'Tue Nov 16 09:00:01 ICT 2021', 'makan siang', '2');
 
 --
 -- Indexes for dumped tables
@@ -83,9 +75,9 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`username`);
 
 --
--- Indexes for table `barang`
+-- Indexes for table `daily`
 --
-ALTER TABLE `barang`
+ALTER TABLE `daily`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -93,10 +85,10 @@ ALTER TABLE `barang`
 --
 
 --
--- AUTO_INCREMENT for table `barang`
+-- AUTO_INCREMENT for table `daily`
 --
-ALTER TABLE `barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+ALTER TABLE `daily`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
