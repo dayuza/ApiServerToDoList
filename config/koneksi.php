@@ -1,5 +1,6 @@
 <?php
 
+
     $host = "localhost";
     $username = "root";
     $password = "";
@@ -10,4 +11,5 @@
         echo "error connection".mysqli_connect_error();
         exit();
     }
+
 ?>
