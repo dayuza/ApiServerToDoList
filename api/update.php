@@ -3,14 +3,14 @@
 include "../config/koneksi.php";
 
 $id = @$_POST['id'];
-$nama_barang = @$_POST['waktu'];
-$jumlah_barang = @$_POST['tanggal'];
-$kode_barang = @$_POST['kegiatan'];
-$harga_barang = @$_POST['prioritas'];
+$waktu = @$_POST['waktu'];
+$tanggal = @$_POST['tanggal'];
+$kegiatan = @$_POST['kegiatan'];
+$prioritas = @$_POST['prioritas'];
 
 $data = [];
 
-$query = mysqli_query($conn, "UPDATE `daily` SET `waktu`='".$nama_barang."',`tanggal`='".$jumlah_barang."',`kegiatan`='".$kode_barang."',`prioritas`='".$harga_barang."' WHERE `id`='".$id."'");
+$query = mysqli_query($conn, "UPDATE `daily` SET `waktu`='".$waktu."',`tanggal`='".$tanggal."',`kegiatan`='".$kegiatan."',`prioritas`='".$prioritas."' WHERE `id`='".$id."'");
 
 if($query){
     $status = true;
